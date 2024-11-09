@@ -35,11 +35,6 @@ SECRET_KEY = SECRET_KEY
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS = [
-    'https://9ecb-213-230-92-186.ngrok-free.app',  # Add your ngrok URL here
-    'https://localhost',  # Also include localhost if it's not already
-    'http://localhost',  # For HTTP requests if necessary
-]
 
 # Application definition
 
@@ -136,7 +131,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # STATIC_ROOT = BASE_DIR / 'static'
 
 
