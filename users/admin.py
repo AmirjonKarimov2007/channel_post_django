@@ -7,13 +7,10 @@ class UserAdmin(admin.ModelAdmin):
 
 
 class PostAdmin(admin.ModelAdmin):
-    # Filter `nomzodlar` field based on the current `Post`
     def formfield_for_manytomany(self, db_field, request, **kwargs):
         if db_field.name == 'nomzodlar':
-            # Ensure only Nomzodlar linked to this specific Post are shown
-            post_id = request.resolver_match.kwargs.get('object_id')  # Get current Post ID
+            post_id = request.resolver_match.kwargs.get('object_id')
             if post_id:
-                # Filter Nomzodlar by the current Post ID
                 kwargs['queryset'] = Nomzodlar.objects.filter(posts__id=post_id)
         return super().formfield_for_manytomany(db_field, request, **kwargs)
 

@@ -29,12 +29,12 @@ class Nomzot_Ovozlar(models.Model):
     post = models.ForeignKey('Post', on_delete=models.CASCADE, related_name='nomzot_ovozlars')
     def __str__(self):
         return str(f"{self.telegram_id}")
-
 class Post(models.Model):
     nomzodlar = models.ManyToManyField(Nomzodlar,blank=True)
     title = models.CharField(max_length=200, verbose_name='sarlavha')
     channel = models.CharField(max_length=200, null=True, blank=True)
     message_id = models.BigIntegerField(unique=False, null=True, blank=True, verbose_name='message id')
+    pin = models.BooleanField(default=False,blank=True)
     created_date = models.DateField(default=timezone.now, verbose_name='Yaratilgan sana')
     end_date = models.DateTimeField(null=True, blank=True, verbose_name='Tugash sanasi va vaqti')
 
