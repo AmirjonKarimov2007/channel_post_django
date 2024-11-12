@@ -19,7 +19,6 @@ DB_USER = env.str('DB_USER')
 DB_PASS = env.str('DB_PASS')
 DB_NAME = env.str('DB_NAME')
 DB_HOST = env.str('DB_HOST')
-DB_PORT = env.int('DB_PORT')
 SECRET_KEY = env.str('SECRET_KEY')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -92,7 +91,7 @@ DATABASES = {
         'USER': DB_USER,
         'PASSWORD': DB_PASS,
         'HOST': DB_HOST,
-        'PORT': DB_PORT,
+        'PORT': 5432,
     }
 }
 
