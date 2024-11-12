@@ -3,7 +3,6 @@
     {
       "src": "telegram_bot/wsgi.py",
       "use": "@vercel/python",
-      
     }
   ],
   "routes": [
