@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import User,Post,Nomzodlar,SendPost,Nomzot_Ovozlar
 
 class UserAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'username', 'user_id']
+    list_display = ['id', 'name', 'username', 'user_id','created_date','updated_date']
 
 
 
@@ -16,7 +16,6 @@ class PostAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Nomzot_Ovozlar)
-# Register your models here.
 admin.site.register(User, UserAdmin)
 admin.site.register(Nomzodlar)
 admin.site.register(SendPost)
